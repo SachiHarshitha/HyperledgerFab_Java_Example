@@ -41,6 +41,7 @@ public class IAsset {
 	Path currentUsersHomeDir = Paths.get(System.getProperty("user.dir"));
 	Path pathRoot = Paths.get(currentUsersHomeDir.toString(), "Users", "Shared", "Connections");
 	String connectionFile = "\\1OrgLocalFabricOrg1GatewayConnection.json";
+	String user = "sachi";
     
     @APIResponses(value = {
             @APIResponse(responseCode = "200", description = "Asset for id", content = @Content(mediaType = MediaType.APPLICATION_JSON, schema = @Schema(ref = "Asset"))),
@@ -66,7 +67,7 @@ public class IAsset {
 
 			// expecting wallet directory within the default server location
 			// wallet exported from Fabric wallets Org 1
-			builder.identity(wallet, "sachi").networkConfig(networkConfigPath).discovery(true);
+			builder.identity(wallet, user).networkConfig(networkConfigPath).discovery(true);
 
 			try (Gateway gateway = builder.connect()) {
 
@@ -107,7 +108,7 @@ public class IAsset {
 			Wallet wallet = Wallets.newFileSystemWallet(walletPath);
 			Path networkConfigPath = Paths.get(pathRoot + connectionFile);
 
-			Gateway.Builder builder = Gateway.createBuilder().identity(wallet, "sachi").networkConfig(networkConfigPath).discovery(true);
+			Gateway.Builder builder = Gateway.createBuilder().identity(wallet, user).networkConfig(networkConfigPath).discovery(true);
 			try(Gateway gateway = builder.connect()) {
 				// get the network and contract
 				Network network = gateway.getNetwork("mychannel");
@@ -153,7 +154,7 @@ public class IAsset {
 
 			// expecting wallet directory within the default server location
 			// wallet exported from Fabric wallets Org 1
-			builder.identity(wallet, "sachi").networkConfig(networkConfigPath).discovery(true);
+			builder.identity(wallet, user).networkConfig(networkConfigPath).discovery(true);
 
 			try (Gateway gateway = builder.connect()) {
 
@@ -194,7 +195,7 @@ public class IAsset {
 			Wallet wallet = Wallets.newFileSystemWallet(walletPath);
 			Path networkConfigPath = Paths.get(pathRoot + connectionFile);
 
-			Gateway.Builder builder = Gateway.createBuilder().identity(wallet, "sachi").networkConfig(networkConfigPath).discovery(true);
+			Gateway.Builder builder = Gateway.createBuilder().identity(wallet, user).networkConfig(networkConfigPath).discovery(true);
 			try(Gateway gateway = builder.connect()) {
 				// get the network and contract
 				Network network = gateway.getNetwork("mychannel");
@@ -234,7 +235,7 @@ public class IAsset {
 			Wallet wallet = Wallets.newFileSystemWallet(walletPath);
 			Path networkConfigPath = Paths.get(pathRoot + connectionFile);
 
-			Gateway.Builder builder = Gateway.createBuilder().identity(wallet, "sachi").networkConfig(networkConfigPath).discovery(true);
+			Gateway.Builder builder = Gateway.createBuilder().identity(wallet, user).networkConfig(networkConfigPath).discovery(true);
 			try(Gateway gateway = builder.connect()) {
 				// get the network and contract
 				Network network = gateway.getNetwork("mychannel");
