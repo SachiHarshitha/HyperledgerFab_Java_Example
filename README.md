@@ -1,5 +1,5 @@
 # Concept
-Hyperledger Fabric based RTLS system application for INTRANAV GMBH.
+Hyperledger Fabric Example Created for JAVA.
 
 # IMPORTANT BEFORE CLONE!
 
